@@ -1,0 +1,106 @@
+@import './../../style.scss';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 115rem;
+  width: 100%;
+  padding: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    color: $text-primary;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: right;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 3.5rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 3rem;
+    }
+  }
+
+  .accent {
+    color: $color-primary;
+  }
+
+  .subtitle {
+    display: block;
+    margin-top: -0.5rem;
+    color: $text-primary;
+    font-size: 0.4em;
+    font-weight: 500;
+  }
+
+  .desktop {
+    width: 100%;
+    max-width: 70rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    a {
+      color: $text-primary;
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: color 0.5s linear;
+    }
+    a:hover {
+      color: $color-secondary;
+    }
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  .mobile {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    padding: 3rem 2rem;
+    background-color: rgba(0, 0, 0, 0.95);
+    a {
+      color: $text-primary;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  }
+
+  ul > .active {
+    color: $color-primary;
+  }
+
+  .nav__menu-btn {
+    cursor: pointer;
+    font-size: 4rem;
+    width: fit-content;
+    color: #fff;
+    background: none;
+    border: none;
+    display: none;
+    z-index: 3;
+
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+  }
+}
